@@ -17,11 +17,14 @@ const upload = multer({
 // --- CONFIGURAZIONE BREVO (Ex Sendinblue) ---
 const transporter = nodemailer.createTransport({
     host: "smtp-relay.brevo.com", // Server di Brevo
-    port: 587, // Porta standard
+    port: 2825, // Porta standard
     secure: false, // False per 587
     auth: {
         user: process.env.EMAIL_USER, // La mail usata per registrare Brevo
         pass: process.env.EMAIL_PASS  // La CHIAVE SMTP generata (non la password di login!)
+    },
+    tls: {
+        rejectUnauthorized: false
     }
 });
 
