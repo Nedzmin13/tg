@@ -1,31 +1,18 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
 const multer = require('multer');
 const cors = require('cors');
+const axios = require('axios'); // Importa Axios
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Configurazione Multer per i file
 const storage = multer.memoryStorage();
 const upload = multer({
     storage: storage,
     limits: { fileSize: 10 * 1024 * 1024 }
-});
-
-// --- CONFIGURAZIONE BREVO (Ex Sendinblue) ---
-const transporter = nodemailer.createTransport({
-    host: "smtp-relay.brevo.com", // Server di Brevo
-    port: 2825, // Porta standard
-    secure: false, // False per 587
-    auth: {
-        user: process.env.EMAIL_USER, // La mail usata per registrare Brevo
-        pass: process.env.EMAIL_PASS  // La CHIAVE SMTP generata (non la password di login!)
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
 });
 
 app.post('/send-email', upload.single('attachment'), async (req, res) => {
@@ -44,35 +31,51 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
             titleHtml = "Nuova Candidatura dal Sito";
         }
 
-        const mailOptions = {
-            // Importante: Brevo richiede che il mittente sia verificato o uguale all'account
-            from: `"Sito Web TA.GE" <${process.env.EMAIL_USER}>`,
+        // Costruiamo il contenuto HTML
+        const htmlContent = `
+            <h3 style="color: #2C3E50;">${titleHtml}</h3>
+            <p><strong>Nome:</strong> ${user_name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${user_email}">${user_email}</a></p>
+            <p><strong>Telefono:</strong> ${user_phone}</p>
+            <p><strong>Richiesta/Posizione:</strong> ${position}</p>
+            ${cv_link ? `<p><strong>Link Esterno:</strong> ${cv_link}</p>` : ''}
+            <hr>
+            <p><strong>Messaggio:</strong><br>${message}</p>
+        `;
 
-            // Qui metti la mail DOVE vuoi ricevere i messaggi (la tua Aruba)
-            to: "info@tagesas.it",
-
-            replyTo: user_email,
+        // Preparazione dati per API Brevo
+        const emailData = {
+            sender: { name: "Sito Web TA.GE", email: process.env.EMAIL_USER }, // La mail del tuo account Brevo
+            to: [{ email: "info@tagesas.it", name: "TA.GE SAS" }], // Dove vuoi ricevere
+            replyTo: { email: user_email, name: user_name },
             subject: subjectText,
-            html: `
-                <h3 style="color: #2C3E50;">${titleHtml}</h3>
-                <p><strong>Nome:</strong> ${user_name}</p>
-                <p><strong>Email:</strong> <a href="mailto:${user_email}">${user_email}</a></p>
-                <p><strong>Telefono:</strong> ${user_phone}</p>
-                <p><strong>Richiesta/Posizione:</strong> ${position}</p>
-                ${cv_link ? `<p><strong>Link Esterno:</strong> ${cv_link}</p>` : ''}
-                <hr>
-                <p><strong>Messaggio:</strong><br>${message}</p>
-            `,
-            attachments: file ? [{ filename: file.originalname, content: file.buffer }] : []
+            htmlContent: htmlContent
         };
 
-        await transporter.sendMail(mailOptions);
-        console.log("Email inviata con successo!");
+        // Gestione Allegato (se presente)
+        if (file) {
+            emailData.attachment = [
+                {
+                    content: file.buffer.toString('base64'),
+                    name: file.originalname
+                }
+            ];
+        }
+
+        // Chiamata API Brevo
+        await axios.post('https://api.brevo.com/v3/smtp/email', emailData, {
+            headers: {
+                'api-key': process.env.EMAIL_PASS, // Qui useremo la API KEY invece della password SMTP
+                'Content-Type': 'application/json'
+            }
+        });
+
+        console.log("Email inviata con API!");
         res.status(200).json({ message: 'Email inviata!' });
 
     } catch (error) {
-        console.error("Errore invio email:", error);
-        res.status(500).json({ error: error.message });
+        console.error("Errore API Brevo:", error.response ? error.response.data : error.message);
+        res.status(500).json({ error: 'Errore invio email' });
     }
 });
 
