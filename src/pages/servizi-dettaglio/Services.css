@@ -1,0 +1,244 @@
+/* Header Pagine Servizi */
+.service-page-header {
+    text-align: center;
+    padding: 140px 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-page-header h1 {
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.service-page-header p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.gallery-item {
+    background: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.features-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Icone Features (Tavoli) */
+.icon-feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.icon-feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: #f0f4f8;
+    padding: 50px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+}
+
+.material-col h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.material-col ul li {
+    margin-bottom: 10px;
+    color: #555;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.types-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.type-item {
+    background: #eef2f6;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+}
+
+.type-item h3 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.type-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.applications-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.app-item {
+    text-align: center;
+}
+
+.app-icon-box {
+    width: 100px;
+    height: 100px;
+    background: #f4f4f4;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #c0392b;
+    margin: 0 auto 15px auto;
+}
+
+.cta-section {
+    background-color: #2c5282;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    border-radius: 8px;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-white {
+    background: white;
+    color: #2c5282;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-grid, .features-grid, .materials-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-page-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* Customizzazione Swiper */
+.swiper-pagination-bullet {
+    background: #ccc;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #2c5886;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #2c5886;
+}

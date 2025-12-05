@@ -1,0 +1,88 @@
+/* Contenitore principale con maschera sfumata ai lati */
+.continuous-visual-slider {
+    width: 100%;
+    padding: 2rem 0 3rem; /* Spaziatura sopra/sotto */
+    position: relative;
+    /* Maschera per sfumare i bordi dx e sx */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Override classi Swiper */
+.continuousSwiper {
+    width: 100%;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+    box-sizing: border-box;
+}
+
+
+.continuousSwiper .swiper-wrapper {
+    display: flex;
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: continuousScroll 140s linear infinite; /* 60s per scorrevolezza */
+    will-change: transform;
+}
+
+/* Pausa animazione su hover */
+.continuousSwiper:hover .swiper-wrapper {
+    animation-play-state: paused;
+}
+
+/* Keyframes per scorrimento infinito */
+@keyframes continuousScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Stile della singola Slide (Card) */
+.continuous-slide {
+    width: clamp(300px, 30vw, 450px) !important; /* Larghezza responsiva */
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    margin-right: 30px;
+    flex-shrink: 0;
+
+    background: #ffffff; /* Sfondo bianco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover sulla singola card */
+.continuous-slide:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+/* Immagine interna */
+.continuous-slider-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .continuous-visual-slider {
+        padding: 1rem 0 2rem;
+    }
+
+    .continuous-slide {
+        width: 260px !important;
+        margin-right: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+}

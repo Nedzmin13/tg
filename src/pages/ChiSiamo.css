@@ -1,0 +1,212 @@
+.about-header {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.about-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Sezione Intro Testuale */
+.intro-text-section {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.intro-text-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.intro-text-section strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.design-section {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.design-section h2 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.design-section p {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+.design-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.design-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.split-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 100px;
+    padding: 0 20px;
+}
+
+.split-text {
+    flex: 1;
+}
+
+.split-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.split-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.transparent-img {
+    max-height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+.cover-img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Tipografia Titoli Sezioni */
+.split-text h3 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Liste con spunte */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.check-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.feature-item strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.feature-item p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Sezione Carpenteria Finale */
+.carpentry-section {
+    background-color: #f4f6f8;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 8px;
+    margin-bottom: 60px;
+}
+
+.carpentry-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.carpentry-section p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .split-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .split-section.reverse {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
