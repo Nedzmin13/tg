@@ -22,7 +22,7 @@ const LavoraConNoi = () => {
         formData.append("formType", "candidatura");
 
         try {
-            // Invio al TUO server locale (Node.js)
+
             const response = await fetch("https://tage.onrender.com/send-email", {
                 method: "POST",
                 body: formData
@@ -48,7 +48,7 @@ const LavoraConNoi = () => {
             <div className="form-page-wrapper">
                 <div className="container">
 
-                    {/* ... Header e Split Layout uguali a prima ... */}
+
                     <div className="form-header">
                         <motion.h1 initial={{opacity:0, y:-20}} animate={{opacity:1, y:0}}>Lavora con Noi</motion.h1>
                         <p>Siamo alla ricerca di professionisti qualificati e motivati da integrare nel nostro team.

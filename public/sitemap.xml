@@ -1,53 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home -->
     <url>
-        <loc>https://www.tage-sas.it/</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.tagesas.it/</loc>
+        <lastmod>2025-12-05</lastmod>
         <priority>1.0</priority>
     </url>
+
+    <!-- Pagine Principali -->
     <url>
-        <loc>https://www.tage-sas.it/chi-siamo</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.tagesas.it/chi-siamo</loc>
+        <lastmod>2025-12-05</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.tage-sas.it/servizi</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.tagesas.it/servizi</loc>
+        <lastmod>2025-12-05</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.tage-sas.it/servizi/sedie</loc>
-        <lastmod>2025-01-30</lastmod>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.tage-sas.it/servizi/tavoli</loc>
-        <lastmod>2025-01-30</lastmod>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.tage-sas.it/servizi/cancelli</loc>
-        <lastmod>2025-01-30</lastmod>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.tage-sas.it/servizi/ringhiere</loc>
-        <lastmod>2025-01-30</lastmod>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.tage-sas.it/progetti</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.tagesas.it/progetti</loc>
+        <lastmod>2025-12-05</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.tage-sas.it/contatti</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.tagesas.it/contatti</loc>
+        <lastmod>2025-12-05</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.tagesas.it/lavora-con-noi</loc>
+        <lastmod>2025-12-05</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.tage-sas.it/lavora-con-noi</loc>
-        <lastmod>2025-01-30</lastmod>
-        <priority>0.6</priority>
+        <loc>https://www.tagesas.it/preventivo</loc>
+        <lastmod>2025-12-05</lastmod>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Pagine Servizi Dettaglio -->
+    <url>
+        <loc>https://www.tagesas.it/servizi/sedie</loc>
+        <lastmod>2025-12-05</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.tagesas.it/servizi/tavoli</loc>
+        <lastmod>2025-12-05</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.tagesas.it/servizi/cancelli</loc>
+        <lastmod>2025-12-05</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.tagesas.it/servizi/ringhiere</loc>
+        <lastmod>2025-12-05</lastmod>
+        <priority>0.8</priority>
     </url>
 </urlset>

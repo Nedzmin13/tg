@@ -53,7 +53,7 @@ const Preventivo = () => {
                         animate={{opacity:1, y:0}}
                         transition={{delay: 0.1}}
                     >
-                        {/* USARE onSubmit={handleSubmit} INVECE DI EMAILJS */}
+
                         <form onSubmit={handleSubmit}>
                             <div className="form-row">
                                 <div className="form-group">
@@ -87,7 +87,7 @@ const Preventivo = () => {
 
                             <div className="form-group">
                                 <label>Carica Disegno o Foto (Opzionale, Max 10MB)</label>
-                                {/* NAME deve essere "attachment" per Multer */}
+
                                 <input type="file" name="attachment" className="file-upload-input" />
                             </div>
 

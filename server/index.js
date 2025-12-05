@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
-const axios = require('axios'); // Importa Axios
+const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
@@ -45,8 +45,8 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
 
         // Preparazione dati per API Brevo
         const emailData = {
-            sender: { name: "Sito Web TA.GE", email: process.env.EMAIL_USER }, // La mail del tuo account Brevo
-            to: [{ email: "info@tagesas.it", name: "TA.GE SAS" }], // Dove vuoi ricevere
+            sender: { name: "Sito Web TA.GE", email: process.env.EMAIL_USER },
+            to: [{ email: "info@tagesas.it", name: "TA.GE SAS" }],
             replyTo: { email: user_email, name: user_name },
             subject: subjectText,
             htmlContent: htmlContent
@@ -65,7 +65,7 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
         // Chiamata API Brevo
         await axios.post('https://api.brevo.com/v3/smtp/email', emailData, {
             headers: {
-                'api-key': process.env.EMAIL_PASS, // Qui useremo la API KEY invece della password SMTP
+                'api-key': process.env.EMAIL_PASS,
                 'Content-Type': 'application/json'
             }
         });
