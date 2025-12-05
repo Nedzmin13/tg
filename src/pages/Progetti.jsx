@@ -7,7 +7,20 @@ import SEO from '../components/SEO';
 
 import img1 from '../assets/homepage.png';
 import img2 from '../assets/chiSiamo1.png';
-const progettiImages = [img1, img2, img1, img2];
+import img3 from '../assets/chiSiamo3.png';
+import img4 from '../assets/logo_grande.png';
+import img5 from '../assets/cancelli/13.jpg';
+import img6 from '../assets/cancelli/2.jpg';
+import img7 from '../assets/ringhiere/3.jpg';
+import img8 from '../assets/ringhiere/4.jpg';
+import img9 from '../assets/ringhiere/6.jpg';
+import img10 from '../assets/sedie/2.jpg';
+import img11 from '../assets/sedie/9.png';
+import img12 from '../assets/tavoli/5.png';
+import img13 from '../assets/tavoli/6.jpg';
+
+
+const progettiImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13 ];
 
 const Progetti = () => {
     return (
