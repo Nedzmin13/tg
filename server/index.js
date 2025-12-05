@@ -10,24 +10,27 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Configurazione Multer (Gestione file in memoria)
 const storage = multer.memoryStorage();
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 10 * 1024 * 1024 } // Limite 10MB
+    limits: { fileSize: 10 * 1024 * 1024 }
 });
 
-// Configurazione Aruba (Nodemailer)
 const transporter = nodemailer.createTransport({
     host: "smtps.aruba.it",
-    port: 465,
-    secure: true, // Usa SSL
+    port: 587,
+    secure: false,
     auth: {
-        user: process.env.EMAIL_USER, // Deve essere info@tagesas.it nel file .env
+        user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    }
+    }, tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
+    },
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 10000
 });
-
 // Endpoint per invio candidatura
 app.post('/send-email', upload.single('attachment'), async (req, res) => {
     try {
