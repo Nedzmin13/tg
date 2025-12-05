@@ -23,7 +23,7 @@ const LavoraConNoi = () => {
 
         try {
             // Invio al TUO server locale (Node.js)
-            const response = await fetch("http://localhost:5000/send-email", {
+            const response = await fetch("https://tage.onrender.com/send-email", {
                 method: "POST",
                 body: formData
             });
