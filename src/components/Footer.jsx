@@ -73,8 +73,8 @@ const Footer = () => {
                 <div className="container footer-bottom-container">
                     <div className="footer-socials">
                         <span>Seguici sui social:</span>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61584633424406#" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                        <a href="https://www.instagram.com/ta.ge_sas/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                     </div>
 
                     <div className="footer-copyright">
