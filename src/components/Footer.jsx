@@ -37,7 +37,7 @@ const Footer = () => {
 
                     <div className="contact-item">
                         <div className="footer-graphic-col"><FaEnvelope className="footer-icon" /></div>
-                        <a href="mailto:info@ta-ge.it" className="footer-link">info@ta-ge.it</a>
+                        <a href="mailto:info@tagesas.it" className="footer-link">info@tagesas.it</a>
                     </div>
                 </div>
 
