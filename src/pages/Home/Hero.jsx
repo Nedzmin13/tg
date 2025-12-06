@@ -34,7 +34,7 @@ const Hero = () => {
                         letterSpacing: '2px'
                     }}
                 >
-                    TA.GE SAS
+                    TA.GE
                 </motion.h1>
 
                 <motion.p
