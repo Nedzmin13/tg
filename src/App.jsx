@@ -17,6 +17,7 @@ import Ringhiere from './pages/servizi-dettaglio/Ringhiere';
 import Progetti from './pages/Progetti';
 import Contatti from './pages/Contatti';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookieBanner from './components/CookieBanner';
 
 const Placeholder = ({ title }) => <div style={{padding: '150px 20px', textAlign: 'center'}}><h1>{title}</h1></div>;
 
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
             <Footer />
+            <CookieBanner />
         </>
     );
 }
